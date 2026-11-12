@@ -1,0 +1,43 @@
+{
+    "proyecto": "Practica_5075_Integridad_KDD",
+    "estandar_calidad": "ISO/IEC 25012",
+    "fecha_generacion": "2026-11-12 19:11:55",
+    "fase_1_integridad_criptografica": {
+        "total_archivos_lote": 3,
+        "archivos_validados": 2,
+        "archivos_rechazados": 1,
+        "tasa_integridad_criptografica_pct": 66.67,
+        "detalle_validados": [
+            "transacciones_tienda_este.csv",
+            "transacciones_tienda_norte.csv"
+        ],
+        "detalle_rechazados": [
+            "transacciones_tienda_sur.csv"
+        ]
+    },
+    "fase_2_saneamiento_y_cuarentena": {
+        "registros_brutos_evaluados": 100,
+        "registros_conformes_kdd": 87,
+        "registros_segregados_cuarentena": 13,
+        "imputaciones_variables_secundarias": 2,
+        "regla_imputacion_categoria": "Moda (Textil)",
+        "regla_imputacion_metodo_pago": "Moda (Transferencia)",
+        "umbral_outlier_iqr_superior_eur": 140.84
+    },
+    "fase_3_metricas_iso_25012": {
+        "tasa_completitud_inicial_registros_pct": 95.0,
+        "tasa_completitud_inicial_celdas_pct": 99.29,
+        "tasa_completitud_final_pct": 100.0,
+        "tasa_unicidad_id_transaccion_pct": 100.0,
+        "tasa_validez_lote_pct": 87.0
+    },
+    "distribucion_importe_eur_post_limpieza": {
+        "media_eur": 70.99,
+        "mediana_eur": 73.44,
+        "desviacion_estandar_eur": 26.34,
+        "percentil_25_q1_eur": 53.8,
+        "percentil_75_q3_eur": 85.34,
+        "minimo_eur": 12.5,
+        "maximo_eur": 124.47
+    }
+}

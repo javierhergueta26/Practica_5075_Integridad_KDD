@@ -1,0 +1,29 @@
+2026-11-12 19:11:35 | INFO     | === INICIO FASE 1: PASARELA CRIPTOGRÁFICA SHA-256 ===
+2026-11-12 19:11:35 | INFO     | [OK] transacciones_tienda_norte.csv -> Firma verificada (34cc61612494...). Movido a staging/verified/
+2026-11-12 19:11:35 | CRITICAL | [ALERTA SEGURIDAD] transacciones_tienda_sur.csv -> CORRUPTO/MANIPULADO. Esperado: 0773c2cde0d45d3bfea53ebe6a0ad9f8fd7f04dabd23f55e737f64918128b83c | Calculado: 1c47dff4bf34eff59390c211052be942851d158740366ab4ab35159fd9986805. Segregado a quarantine/tampered/
+2026-11-12 19:11:35 | INFO     | [OK] transacciones_tienda_este.csv -> Firma verificada (645e9de21d1f...). Movido a staging/verified/
+2026-11-12 19:11:35 | INFO     | === FIN FASE 1 | Validados: 2/3 (66.67%) | Rechazados: 1/3 ===
+2026-11-12 19:11:54 | INFO     | === INICIO FASE 2: SANEAMIENTO, COHERENCIA Y DETECCIÓN DE OUTLIERS ===
+2026-11-12 19:11:54 | INFO     | Cargado fichero verificado: transacciones_tienda_este.csv (50 registros)
+2026-11-12 19:11:54 | INFO     | Cargado fichero verificado: transacciones_tienda_norte.csv (50 registros)
+2026-11-12 19:11:54 | INFO     | Umbrales IQR para importe_eur: Q1=54.47 €, Q3=89.02 €, IQR=34.55 €, Límite Superior=140.84 €
+2026-11-12 19:11:54 | WARNING  | [CUARENTENA] Segregado (ID=nan, Origen=transacciones_tienda_este.csv) -> NULO_COLUMNA_OBLIGATORIA:id_transaccion
+2026-11-12 19:11:54 | INFO     | [IMPUTACIÓN] TXE-20261110-0007: 'categoria' imputada con moda ('Textil')
+2026-11-12 19:11:54 | WARNING  | [CUARENTENA] Segregado (ID=TXE-20261110-0010, Origen=transacciones_tienda_este.csv) -> TIMESTAMP_FUERA_ANIO_CURSO:2027
+2026-11-12 19:11:54 | WARNING  | [CUARENTENA] Segregado (ID=TXE-20261110-0012, Origen=transacciones_tienda_este.csv) -> DOMINIO_IMPORTE_NO_POSITIVO:-34.5
+2026-11-12 19:11:54 | INFO     | [IMPUTACIÓN] TXE-20261110-0015: 'metodo_pago' nulo imputado con moda ('Transferencia')
+2026-11-12 19:11:54 | WARNING  | [CUARENTENA] Segregado (ID=TXE-20261110-0016, Origen=transacciones_tienda_este.csv) -> OUTLIER_ESTADISTICO_IQR:1480.00_EUR
+2026-11-12 19:11:54 | WARNING  | [CUARENTENA] Segregado (ID=TXE-20261110-0018, Origen=transacciones_tienda_este.csv) -> DOMINIO_IMPORTE_NO_POSITIVO:0.0
+2026-11-12 19:11:54 | WARNING  | [CUARENTENA] Segregado (ID=TXE-20261110-0022, Origen=transacciones_tienda_este.csv) -> TIMESTAMP_FUERA_ANIO_CURSO:2024
+2026-11-12 19:11:54 | WARNING  | [CUARENTENA] Segregado (ID=TXE-20261110-0025, Origen=transacciones_tienda_este.csv) -> DOMINIO_UNIDADES_INVALIDAS:0
+2026-11-12 19:11:54 | WARNING  | [CUARENTENA] Segregado (ID=nan, Origen=transacciones_tienda_este.csv) -> NULO_COLUMNA_OBLIGATORIA:id_transaccion
+2026-11-12 19:11:54 | WARNING  | [CUARENTENA] Segregado (ID=TXE-20261110-0032, Origen=transacciones_tienda_este.csv) -> OUTLIER_ESTADISTICO_IQR:2750.90_EUR
+2026-11-12 19:11:54 | WARNING  | [CUARENTENA] Segregado (ID=TXE-20261110-0034, Origen=transacciones_tienda_este.csv) -> NULO_COLUMNA_OBLIGATORIA:importe_eur
+2026-11-12 19:11:54 | WARNING  | [CUARENTENA] Segregado (ID=TXE-20261110-0039, Origen=transacciones_tienda_este.csv) -> TIMESTAMP_FORMATO_CORRUPTO
+2026-11-12 19:11:54 | WARNING  | [CUARENTENA] Segregado (ID=TXE-20261110-0042, Origen=transacciones_tienda_este.csv) -> DOMINIO_UNIDADES_INVALIDAS:-3
+2026-11-12 19:11:54 | WARNING  | [CUARENTENA] Segregado (ID=TXE-20261110-0047, Origen=transacciones_tienda_este.csv) -> OUTLIER_ESTADISTICO_IQR:4120.00_EUR
+2026-11-12 19:11:55 | INFO     | Dataset KDD exportado en: C:\Users\EXPERTO\5075\Practica_5075_Integridad_KDD\processed\dataset_kdd_listo.csv (87 registros válidos)
+2026-11-12 19:11:55 | INFO     | Registros anómalos exportados en: C:\Users\EXPERTO\5075\Practica_5075_Integridad_KDD\quarantine\bad_records.csv (13 registros)
+2026-11-12 19:11:55 | INFO     | === INICIO FASE 3: PERFILADO KDD (ISO/IEC 25012) ===
+2026-11-12 19:11:55 | INFO     | Métricas JSON guardadas en: C:\Users\EXPERTO\5075\Practica_5075_Integridad_KDD\output_samples\metricas_perfilado.json
+2026-11-12 19:11:55 | INFO     | === FIN PIPELINE DE SANEAMIENTO Y PERFILADO KDD ===

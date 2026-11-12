@@ -1,0 +1,26 @@
+========================================================================
+MANIFIESTO DE CUARENTENA - PIPELINE DE CALIDAD DE DATOS KDD (ISO 25012)
+Fecha de ejecución: 2026-11-12 19:11:35
+========================================================================
+
+[FASE 1 - FICHEROS RECHAZADOS POR INTEGRIDAD CRIPTOGRÁFICA (SHA-256)]
+- Archivo: transacciones_tienda_sur.csv | Motivo: HASH_SHA256_DISCREPANTE
+  Hash Esperado : 0773c2cde0d45d3bfea53ebe6a0ad9f8fd7f04dabd23f55e737f64918128b83c
+  Hash Calculado: 1c47dff4bf34eff59390c211052be942851d158740366ab4ab35159fd9986805
+
+[FASE 2 - REGISTROS SEGREGADOS A quarantine/bad_records.csv]
+Total registros aislados: 13 de 100
+------------------------------------------------------------------------
+ID: nan | Origen: transacciones_tienda_este.csv | TS: 2026-11-10 09:18:17 | Importe: 102.4 | Unidades: 1 -> NULO_COLUMNA_OBLIGATORIA:id_transaccion
+ID: TXE-20261110-0010 | Origen: transacciones_tienda_este.csv | TS: 2027-08-21 14:22:10 | Importe: 58.31 | Unidades: 4 -> TIMESTAMP_FUERA_ANIO_CURSO:2027
+ID: TXE-20261110-0012 | Origen: transacciones_tienda_este.csv | TS: 2026-11-10 11:12:26 | Importe: -34.5 | Unidades: 2 -> DOMINIO_IMPORTE_NO_POSITIVO:-34.5
+ID: TXE-20261110-0016 | Origen: transacciones_tienda_este.csv | TS: 2026-11-10 12:02:54 | Importe: 1480.0 | Unidades: 1 -> OUTLIER_ESTADISTICO_IQR:1480.00_EUR
+ID: TXE-20261110-0018 | Origen: transacciones_tienda_este.csv | TS: 2026-11-10 12:29:50 | Importe: 0.0 | Unidades: 2 -> DOMINIO_IMPORTE_NO_POSITIVO:0.0
+ID: TXE-20261110-0022 | Origen: transacciones_tienda_este.csv | TS: 2024-02-11 09:10:05 | Importe: 31.23 | Unidades: 4 -> TIMESTAMP_FUERA_ANIO_CURSO:2024
+ID: TXE-20261110-0025 | Origen: transacciones_tienda_este.csv | TS: 2026-11-10 13:32:18 | Importe: 57.52 | Unidades: 0 -> DOMINIO_UNIDADES_INVALIDAS:0
+ID: nan | Origen: transacciones_tienda_este.csv | TS: 2026-11-10 14:04:56 | Importe: 48.25 | Unidades: 5 -> NULO_COLUMNA_OBLIGATORIA:id_transaccion
+ID: TXE-20261110-0032 | Origen: transacciones_tienda_este.csv | TS: 2026-11-10 14:48:52 | Importe: 2750.9 | Unidades: 4 -> OUTLIER_ESTADISTICO_IQR:2750.90_EUR
+ID: TXE-20261110-0034 | Origen: transacciones_tienda_este.csv | TS: 2026-11-10 15:15:21 | Importe: nan | Unidades: 3 -> NULO_COLUMNA_OBLIGATORIA:importe_eur
+ID: TXE-20261110-0039 | Origen: transacciones_tienda_este.csv | TS: 2026-99-99 INVALID_TS | Importe: 70.79 | Unidades: 5 -> TIMESTAMP_FORMATO_CORRUPTO
+ID: TXE-20261110-0042 | Origen: transacciones_tienda_este.csv | TS: 2026-11-10 16:42:04 | Importe: 115.74 | Unidades: -3 -> DOMINIO_UNIDADES_INVALIDAS:-3
+ID: TXE-20261110-0047 | Origen: transacciones_tienda_este.csv | TS: 2026-11-10 17:48:18 | Importe: 4120.0 | Unidades: 6 -> OUTLIER_ESTADISTICO_IQR:4120.00_EUR
